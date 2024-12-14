@@ -100,7 +100,6 @@ website = input('Enter the link for the "Table of Contents" page for any Brights
 cookie_path = '../cookies/cur_session_cookies.json'
 service = Service()
 options = webdriver.ChromeOptions()
-options.add_argument("--headless")
 options.add_experimental_option("detach", True)
 driver = webdriver.Chrome(service=service, options=options)
 if not os.path.exists(cookie_path):
@@ -113,6 +112,8 @@ if not os.path.exists(cookie_path):
     print('Cookies saved! Log in again to see the content.')
     driver.quit()
 else:
+    options.add_argument("--headless")
+    driver = webdriver.Chrome(service=service, options=options)
     home_page = "https://purdue.brightspace.com/"
     driver.get(home_page)
     load_cookie(driver, cookie_path)
