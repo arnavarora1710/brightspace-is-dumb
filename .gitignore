@@ -2,3 +2,4 @@ __pycache__/
 cookies/
 output/
 bp_web.py
+.DS_Store
