@@ -7,8 +7,8 @@ Follow these steps to set up the project on your local machine:
 ### 1. Clone the repository
 
 ```bash
-git clone <repository-url>
-cd <project-directory>
+git clone https://github.com/arnavarora1710/brightspace-is-dumb.git
+cd brightspace-is-dumb
 ```
 
 ### 2. Install Dependencies
