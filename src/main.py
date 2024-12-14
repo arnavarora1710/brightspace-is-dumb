@@ -96,10 +96,11 @@ def scrape(driver):
         break
     return ans
 
-website = get_bp_page()
+website = input('Enter the link for the "Table of Contents" page for any Brightspace course: ')
 cookie_path = '../cookies/cur_session_cookies.json'
 service = Service()
 options = webdriver.ChromeOptions()
+options.add_argument("--headless")
 options.add_experimental_option("detach", True)
 driver = webdriver.Chrome(service=service, options=options)
 if not os.path.exists(cookie_path):
