@@ -101,15 +101,15 @@ cookie_path = '../cookies/cur_session_cookies.json'
 service = Service()
 options = webdriver.ChromeOptions()
 options.add_experimental_option("detach", True)
-driver = webdriver.Chrome(service=service, options=options)
 if not os.path.exists(cookie_path):
+    driver = webdriver.Chrome(service=service, options=options)
     driver.get(website)
     while True:
         print('Please log in and press enter when you are done.')
         if input() == '':
             break
     save_cookie(driver, cookie_path)
-    print('Cookies saved! Log in again to see the content.')
+    print('Cookies saved! Run the script again to get started.')
     driver.quit()
 else:
     options.add_argument("--headless")
