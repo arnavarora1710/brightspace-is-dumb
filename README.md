@@ -14,8 +14,11 @@ cd brightspace-is-dumb
 ### 2. Install Dependencies
 
 ```bash
-pip install -r requirements.txt
+python3 -m venv venv; source venv/bin/activate; pip install -r requirements.txt
 ```
 
 ### 3. Run the script
 First, run the script to login into Brightspace and get cookies setup. Then, run the script again to get started!
+```bash
+cd src; python3 main.py
+```
