@@ -1,5 +1,4 @@
 import json, time, os, glob
-from bp_web import get_bp_page
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
