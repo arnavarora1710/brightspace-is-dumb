@@ -21,14 +21,14 @@ def get_last_downloaded_file(download_dir):
     files = glob.glob(os.path.join(download_dir, "*"))
     # remove all files with crdownload
     files = [f for f in files if not f.endswith('crdownload')]
+    files = [f for f in files if not f.endswith('tmp')]
     latest_file = max(files, key=os.path.getctime)
     return latest_file
 
 bad = ["Syllabus", "Course Schedule", "Bookmarks", "Table of Contents", "Start Here", "University Policies and Statements", "Student Support and Resources"]
 vis = set()
-cnt = 0
 def scrape(driver):
-    global vis, cnt, bad
+    global vis, bad
     nav_class = ".d2l-le-TreeAccordionItem-anchor.vui-heading-4"
     all_navs = driver.find_elements(By.CSS_SELECTOR, nav_class)
     all_navs = all_navs[4:]
